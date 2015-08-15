@@ -55,3 +55,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Development`s tests
+__init__.py
+tests.py
