@@ -10,8 +10,6 @@ import getpass
 from urlparse import urlparse
 from HTMLParser import HTMLParser
 
-client_id = '4633060' # ID приложения
-
 class FormParser(HTMLParser):
     def __init__(self):
         HTMLParser.__init__(self)
@@ -107,9 +105,10 @@ def auth(email, password, client_id, scope):
 if __name__ == '__main__':
     email = raw_input('Email: ')
     password = getpass.getpass()
-    token, user_id = auth(email, password, client_id, 'notify,friends,photos,audio,docs,wall,groups,messages,notifications,offline')
+    client_id = '4633060' # ID приложения
+    
+    token, user_id = auth.auth(email, password, client_id, ['notify', 'friends', 'photos', 'audio', 'docs', 'wall', 'groups', 'messages', 'notifications', 'offline'])
     print 'user ID: ', user_id
     print 'token: ', token
 else:
-    print 'auth - модуль авторизации vk и получения token'
-    print 'Единоразово используется для ANNA'
+    print 'auth - модуль авторизации VK и получения token для ANNA'
